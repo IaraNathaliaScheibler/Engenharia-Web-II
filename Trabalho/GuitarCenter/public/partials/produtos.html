@@ -1,0 +1,58 @@
+<section class="container ">
+<meu-painel>
+
+    </meu-painel>
+  
+
+
+    <div class="input-group">
+        <span class="input-group-btn">
+            <br>
+                    <a href="#/produtos/new" class="btn btn-warning" type="button">
+                        Novo Produto
+                    </a><br>
+                </span>
+       
+    </div>
+
+
+
+    <div class="row">
+        <label>Produto</label>
+        <input class="form-control" ng-model="filtro">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>
+                        <h1 class="fa fa-cart-arrow-down"></h1>
+                        <a ng-click="sort('nomeProduto')">Produto</a>
+                    </td>
+                    <td>
+                        <h1 class="fa fa-money"></h1>
+                        <a ng-click="sort('preco')">Preço</a></td>
+                    <td>
+                        <h1 class="fa fa-music"></h1>
+                        <a ng-click="sort('categoria')">Categoria</a></td>
+                        <td>
+
+                        </td>
+                </tr>
+            </thead>
+
+            <tbody class="table-striped">
+                <tr ng-repeat="produto in produtos | 
+                     orderBy:sortValue:order
+                     | filter: filtro">
+                    <td>{{produto.nomeProduto }}</td>
+                    <td>{{produto.preco}}</td>
+                    <td>{{produto.categoria}}</td>
+                    <td>                        
+                        <button class="btn btn-danger" ng-click="del(produto._id)">Del</button>
+                        <a class="btn btn-success" href="#/produtos/{{produto._id}}">Update</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>

@@ -1,0 +1,19 @@
+<table class="table table-striped" ng-controller="categoriasController">
+            <thead>
+                <tr>
+                    <td>
+                        <h1 class="fa fa-user"></h1>
+                        <a ng-click="sort('nomeCategoria')">Categoria</a>
+                    </td>
+                </tr>
+            </thead>
+
+            <tbody class="table-striped">
+                <tr ng-repeat="categoria in elementos | 
+                     orderBy:sortValue:order
+                     | filter: filtro">
+                    <td>{{categoria.nomeCategoria }}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
