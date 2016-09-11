@@ -1,9 +1,4 @@
- (function() {
-  'use strict';
- angular.module('navBarDemoBasicUsage', ['ngMaterial'])
-      .controller('menuController', menuCtrl);
+  angular.module('produtos')
+      .controller('menuController', ['$scope', function($scope) {
 
-  function menuCtrl($scope) {
-    $scope.currentNavItem = 'partials/home.html';
-  }
-  })();
+      }]);

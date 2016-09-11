@@ -1,43 +1,46 @@
 angular.module('produtos')
-  .controller('produtosController',
-    function ($scope, $http) {
-     
-      $scope.filtro = '';
-      $scope.sortValue = 'nome';
-      $scope.order = false;
+    .controller('produtosController', ['$scope', '$http',
+        function ($scope, $http) {
 
-      $scope.produtos = [];
+            $scope.filtro = '';
+            $scope.sortValue = 'nome';
+            $scope.order = false;
 
-      $http.get('api/produtos')
-        .success(function (data) {
-          $scope.produtos = data;
-        })
-        .error(function (statusText) {
-          console.log(statusText);
-        });
 
-      $scope.sort = function (fild) {
-        $scope.sortValue = fild;
-        $scope.order = !$scope.order;
-      };
+            $scope.produtos = [];
 
-      $scope.del = function(id){
+            $http.get('api/produtos')
+                .success(function (data) {
+                    $scope.produtos = data;
+                })
+                .error(function (statusText) {
+                    console.log(statusText);
+                });
 
-      $http.delete('api/produtos/'+id)
-        .success(function(){
-          console.log("Produto deletado com sucesso");  
+            $scope.sort = sort;
+            function sort(fild) {
+                $scope.sortValue = fild;
+                $scope.order = !$scope.order;
+            }
 
-           $http.get('api/produtos')
-        .success(function (data) {
-          $scope.produtos = data;
-        })
-        .error(function (statusText) {
-          console.log(statusText);
-        });
-                
-        }).error(function (statusText) {
-          console.log(statusText);
-        });
-      };
-      
-    });
+            $scope.del = del;
+            function del(id) {
+
+                $http.delete('api/produtos/' + id)
+                    .success(function () {
+                        console.log("Produto deletado com sucesso");
+
+                        $http.get('api/produtos')
+                            .success(function (data) {
+                                $scope.produtos = data;
+                            })
+                            .error(function (statusText) {
+                                console.log(statusText);
+                            });
+
+                    }).error(function (statusText) {
+                        console.log(statusText);
+                    });
+            }
+
+        }]);

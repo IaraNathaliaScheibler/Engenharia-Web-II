@@ -1,11 +1,10 @@
 var jshint = require('gulp-jshint'),
     gulp = require('gulp'),
     img = require('gulp-imagemin'),
-    concat = require('gulp-concat'),
-    htmlReplace = require('gulp-html-replace'),
+    uglify = require('gulp-uglify'),
+    usemin = require('gulp-usemin');
+cssmin = require('gulp-cssmin'),
     browserSync = require('browser-sync'),
-    
-    usemin = require('gulp-usemin'),
     nodemon = require('gulp-nodemon');
 
 // we'd need a slight delay to reload browsers
@@ -13,44 +12,27 @@ var jshint = require('gulp-jshint'),
 var BROWSER_SYNC_RELOAD_DELAY = 500;
 
 gulp.task('lint', function () {
-    return gulp.src('public/js/**/*.js')//**Todo o arquivo js
-        .pipe(jshint())//Pipe junta com jshint
-        .pipe(jshint.reporter('default'));//Reportar o erro
+    return gulp.src('public/js/**/*.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
 });
 
-gulp.task('build-min', function () {
+gulp.task('build-img', function () {
     gulp.src('public/img/*')
-        .pipe(imagemin())             // Pega na memória e guarda na pasta dist
+        .pipe(img())
         .pipe(gulp.dest('dist/img'));
-});
-
-gulp.task('build-js', function () {
-    gulp.src(['public/vendor/angular.js',
-        'public/vendor/angular-route/angular-route.js',
-        'public/js/**/*.js'])
-        .pipe(concat('main.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));
-});
-
-gulp.task('build-html', ['build-js'], function () {//build html espera o js.
-    gulp.src('public/**/*.html')
-        .pipe(htmlReplace({
-            'js': 'js/main.js'
-        }))
-        .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('usemin', function () {
     return gulp.src('public/**/*.html')
         .pipe(usemin({
-            js: [uglify]
+            js: [uglify],
+            css: [cssmin]
         }))
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['lint', 'build-img', 'build-js', 'usemin']);
-
+gulp.task('default', ['lint', 'build-img', 'usemin']);
 
 
 //tarefas para startar server e auto atualizar o navegador
