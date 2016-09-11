@@ -1,5 +1,5 @@
 angular.module('produtos')
-    .config( ['$routeParams',
+    .config( ['$routeProvider',
         function($routeProvider) {
 
         $routeProvider.when('/produtos', {
@@ -18,8 +18,7 @@ angular.module('produtos')
         });
 
         $routeProvider.when('/home', {
-            templateUrl: 'partials/home.html',
-            controller: 'homeController'
+            templateUrl: 'partials/home.html'
 
         });
 
