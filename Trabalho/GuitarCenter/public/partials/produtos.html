@@ -45,7 +45,7 @@
                      | filter: filtro">
                     <td>{{produto.nomeProduto }}</td>
                     <td>{{produto.preco}}</td>
-                    <td>{{produto.categoria}}</td>
+                    <td>{{produto.categoria.nomeCategoria}}</td>
                     <td>                        
                         <button class="btn btn-danger" ng-click="del(produto._id)">Del</button>
                         <a class="btn btn-success" href="#/produtos/{{produto._id}}">Update</a>

@@ -17,14 +17,13 @@
 
                 <div class="form-group">
                     <label>Preço</label>
-                    <input type="preco" name="preco" ng-model="produto.preco" class="form-control" required>
+                    <input type="text" name="preco" ng-model="produto.preco" class="form-control" required>
                     <span class="form-control alert-danger" ng-show="formularioProduto.$submitted && formularioProduto.preco.$error.required"> Preço obrigatório </span>
                 </div>
 
-                 <div class="dropdown" >
-                    
+                 <div class="dropdown" >                    
                     <select name="grupo"  ng-controller="categoriasController" ng-model="produto.categoria"
-                     ng-options="grupo as categoria.nomeCategoria for categoria in categorias">
+                     ng-options="categoria as categoria.nomeCategoria for categoria in categorias track by categoria._id">
                         <option value="">Categorias</option>
                     </select>
                      <span class="form-control alert-danger" ng-show="formulario.grupo.$error.required && formulario.$submitted">Grupo Obrigatorio</span>

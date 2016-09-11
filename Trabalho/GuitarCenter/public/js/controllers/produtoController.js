@@ -18,7 +18,7 @@ angular.module('produtos')
 
             $scope.submeter = submeter;
             function submeter() {
-                if ($scope.formulario.$valid) {
+                if ($scope.formularioProduto.$valid) {
                     if ($routeParams.id) {
                         $http.put('api/produtos/' + $scope.produto._id, $scope.produto)
                             .success(function () {
@@ -39,6 +39,6 @@ angular.module('produtos')
                             });
                     }
                 }
-            };
+            }
 
         }]);

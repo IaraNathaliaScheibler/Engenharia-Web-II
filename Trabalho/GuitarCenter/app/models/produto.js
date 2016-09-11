@@ -11,7 +11,7 @@ module.exports = function () {
       require: true
     },
     categoria: {
-      type: String
+      type: Object
 
     }
   });
