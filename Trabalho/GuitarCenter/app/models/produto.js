@@ -9,9 +9,10 @@ module.exports = function () {
     preco: {
       type: String,
       require: true
-    },categoria:{
+    },
+    categoria: {
       type: String
-     
+
     }
   });
 

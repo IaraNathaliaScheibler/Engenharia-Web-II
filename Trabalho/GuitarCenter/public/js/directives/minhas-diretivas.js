@@ -1,16 +1,16 @@
 angular.module('meusComponentes', [])
-  .directive('meuPainel', function () {
-    var directive = {};
+    .directive('meuPainel', function() {
+        var directive = {};
 
-    directive.restrict = 'EA';
+        directive.restrict = 'EA';
 
-    directive.scope = {
-      titulo: '@',
-      mensagem: '@'
-    };
+        directive.scope = {
+            titulo: '@',
+            mensagem: '@',
+            currentNavItem: '@'
+        };
 
-    directive.templateUrl = 'js/templates/painel.html';
+        directive.templateUrl = 'js/templates/painel.html';
 
-    return directive;
-  }
-);
+        return directive;
+    });
