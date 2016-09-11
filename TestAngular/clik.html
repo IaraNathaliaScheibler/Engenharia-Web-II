@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Click</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-divice-width, initial-scale=1">
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+</head>
+
+<body ng-app="teste">
+    <div class="row text-center" ng-controller="clicController as c">
+        {{c.cont}}
+   <p></p>
+        <button type="" class="btn btn-sucess" ng-click="c.count()">+</button>
+    </div>
+    <script src="vendor/angular/angular.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controller/clicController.js"></script>
+</body>
+
+</html>
