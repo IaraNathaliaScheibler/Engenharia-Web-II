@@ -17,6 +17,16 @@ angular.module('produtos')
             controller: 'produtoController'
         });
 
+        $routeProvider.when('/comprar/:id', {
+            templateUrl: 'partials/comprar.html',
+            controller: 'produtoController'
+        });
+
+        $routeProvider.when('/endereco', {
+            templateUrl: 'partials/formularioEndereco.html',
+            controller: 'compraController'
+        });
+
         $routeProvider.when('/home', {
             templateUrl: 'partials/home.html'
 

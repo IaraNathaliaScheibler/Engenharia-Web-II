@@ -1,12 +1,12 @@
 angular.module('produtos')
-    .controller('categoriaController', ['$scope', '$http', '$routeParams',
+    .controller('compraController', ['$scope', '$http', '$routeParams',
         function ($scope, $http, $routeParams) {
 
-            $scope.categoria = {};
+            $scope.compra = {};
             $scope.mensagem = '';
 
             if ($routeParams.id) {
-                $http.get('/api/categorias/' + $routeParams.id)
+                $http.get('/api/comprar/' + $routeParams.id)
                     .success(function (categoria) {
                         $scope.categoria = categoria;
                     })
@@ -20,14 +20,7 @@ angular.module('produtos')
             function submeter() {
                 if ($scope.formularioCategoria.$valid) {
                     if ($routeParams.id) {
-                        $http.put('/api/categorias/' + $scope.categoria._id, $scope.categoria)
-                            .success(function () {
-                                $scope.mensagem = 'Categoria alterada com sucesso!';
-                            }).error(function (erro) {
-                                console.log(erro);
-                                $scope.mensagem = 'Não foi possível alterar!';
-                            });
-                    } else {
+                       
                         $http.post('/api/categorias', $scope.categoria)
                             .success(function () {
                                 $scope.categoria = {};
@@ -37,7 +30,7 @@ angular.module('produtos')
                                 console.log(erro);
                                 $scope.mensagem = 'Não foi possível cadastrar as categorias!';
                             });
-                    }
+                    
                 }
             }
 

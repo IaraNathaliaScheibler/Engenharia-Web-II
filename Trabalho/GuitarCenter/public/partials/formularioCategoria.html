@@ -1,0 +1,24 @@
+<section class="container ">
+    <meu-painel>
+
+    </meu-painel>
+
+    <div class="row">
+        <span class=" alert-info" ng-show="formularioCategoria.$submitted"> {{mensagem}} </span>
+
+
+        <form novalidate name="formularioCategoria" class="row" ng-submit="submeter()">
+            <div class="row">
+                <div class="form-group">
+                    <label>Categoria</label>
+                    <input type="text" name="nomeCategoria" ng-model="categoria.nomeCategoria" class="form-control" required>
+                    <span class="form-control alert-danger" ng-show="formularioCategoria.$submitted && formularioCategoria.name.$error.required"> Nome da categoria é obrigatório </span>
+                </div>
+
+                <button type="submit" class="btn btn-warning" ng-disabled="formularioCategoria.$invalid">Salvar</button>
+                <a href="#/produtos/new" class="btn btn-warning">Voltar</a>
+                <hr>
+            </div>
+        </form>
+    </div>
+</section>

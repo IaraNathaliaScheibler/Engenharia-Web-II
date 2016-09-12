@@ -1,0 +1,61 @@
+<head>
+    <style>
+      body {
+            background-color: #D8BFD8;
+        } 
+    </style>
+    
+</head>
+<section class="container ">
+    <meu-painel>
+
+    </meu-painel>
+
+    <div class="row">
+        <span class=" alert-info" ng-show="formularioCompra.$submitted"> {{mensagem}} </span>
+
+
+        <form novalidate name="formularioCompra" class="row" ng-submit="submeter()">
+            <div class="row">
+                <div class="form-group">
+                    <label>Produto</label>
+                    <input type="text" name="nomeProduto" ng-model="produto.nomeProduto" class="form-control" required>
+                   
+                </div>
+
+                <div class="form-group">
+                    <label>Preço</label>
+                    <input type="text" name="preco" ng-model="produto.preco" class="form-control" required>
+                    
+                </div>
+
+                <a href="#/endereco" class="btn btn-warning">Endereço</a><br></br>
+
+                <div class="form-group">
+                    <label>Informe seu email</label>
+                    <input type="text" name="email" ng-model="comprar.email" class="form-control" required>
+                    
+                </div>
+
+                 <div class="dropdown" > 
+                       <label value="">Forma de pagamento</label>      
+                    <input type="<textarea rows="4" cols="3" value="Boleto" "name="grupo"  ng-controller="compraController" ng-model="compra.formaPag"></textarea>
+                     
+                        
+                    </input>
+                     
+                     
+                </div>
+                <br>
+                 
+
+                <br><br>
+
+
+                <button type="submit" class="btn btn-warning" ng-disabled="formularioProduto.$invalid" ng-click="del(produto._id)">Salvar</button>
+                <a href="#/produtos" class="btn btn-warning">Voltar</a>
+                <hr>
+            </div>
+        </form>
+    </div>
+</section>
