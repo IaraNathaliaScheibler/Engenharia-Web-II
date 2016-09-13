@@ -1,0 +1,55 @@
+<section class="container ">
+    <style>
+        body {
+            background-color: #D8BFD8;
+        }
+    </style>
+    <meu-painel>
+
+    </meu-painel>
+
+    <div class="row">
+        <span class=" alert-info" ng-show="formularioCompra.$submitted"> {{mensagem}} </span>
+
+
+        <form novalidate name="formularioCompra" class="row" ng-submit="submeter()">
+            <div class="row">
+                <div class="form-group">
+                    <label>Produto</label>
+                    <input type="text" name="nomeProduto" ng-model="compra.produto.nomeProduto" class="form-control" required>
+                    <span class="form-control alert-danger" ng-show="formularioCompra.$submitted && formularioCompra.name.$error.required"> Nome do produto é obrigatório </span>
+                </div>
+
+                <div class="form-group">
+                    <label>Preço</label>
+                    <input type="text" name="preco" ng-model="compra.produto.preco" class="form-control" required>
+                    <span class="form-control alert-danger" ng-show="formularioCompra.$submitted && formularioCompra.preco.$error.required"> Preço obrigatório </span>
+                </div>
+
+                <a href="#/endereco" class="btn btn-warning">Endereço</a><br></br>
+
+                <div class="form-group">
+                    <label>Informe seu email</label>
+                    <input type="mail" name="email" ng-model="compra.email" class="form-control" required>
+ <span class="form-control alert-danger" ng-show="formularioCompra.$submitted && formularioCompra.preco.$error.required"> email obrigatório </span>
+                </div>
+
+                <div class="dropdown">
+                    <label value="">Forma de pagamento</label>
+                    <input type="text" value="Boleto" name="pag"  ng-model="compra.formaPag" required>
+                    <span class="form-control alert-danger" ng-show="formularioCompra.$submitted && formularioCompra.preco.$error.required"> Endereco obrigatório </span>
+                </div>
+                <br>
+
+
+                <br><br>
+
+
+                <button type="submit" class="btn btn-success" ng-disabled="formularioCompra.$invalid" >Salvar</button>
+                
+                <a href="#/produtos" class="btn btn-warning">Voltar</a>
+                <hr>
+            </div>
+        </form>
+    </div>
+</section>

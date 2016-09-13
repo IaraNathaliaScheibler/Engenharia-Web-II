@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+</head>
+
+<body ng-app="teste">
+
+    <div class="row text-center" ng-controller="tabelaController as ta">
+
+        <input ng-model="ta.filtro" type="search"  placeholder="digite um valor" class="form-control text-center"> 
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <td ng-repeat="(key, value) in ta.contatos[0]">{{key}}</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contato in ta.contatos | filter: ta.filtro">
+                    <td ng-repeat="(key, value) in contato">{{value}}</td>
+
+            </tbody>
+        </table>
+    </div>
+   
+
+    <script src="vendor/angular/angular.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controller/testController.js"></script>
+</body>
+
+</html>

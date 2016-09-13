@@ -1,4 +1,7 @@
-  angular.module('produtos')
-      .controller('menuController', ['$scope', function($scope) {
+angular.module('produtos')
+  .controller('menuController', ['$scope', function ($scope) {
 
-      }]);
+     
+      
+  }]);
+

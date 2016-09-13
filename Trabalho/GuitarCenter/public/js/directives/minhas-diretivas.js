@@ -9,8 +9,9 @@ angular.module('meusComponentes', [])
             mensagem: '@',
             currentNavItem: '@'
         };
-
+                
         directive.templateUrl = 'js/templates/painel.html';
-
+        
         return directive;
     });
+

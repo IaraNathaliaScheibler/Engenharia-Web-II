@@ -1,3 +1,10 @@
+<head>
+    <style>
+        body {
+            background-color: #D8BFD8;
+        } 
+    </style>
+</head>
 <section class="container ">
    <meu-painel>
 
@@ -9,6 +16,7 @@
 
     <div class="row">
         <input class="form-control" ng-model="filtro">
+        
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -23,7 +31,7 @@
             </thead>
 
             <tbody class="table-striped">
-                <tr ng-repeat="categoria in categorias | 
+                <tr class="info" ng-repeat="categoria in categorias | 
                      orderBy:sortValue:order
                      | filter: filtro">
                     <td>{{categoria.nomeCategoria }}</td>
@@ -31,6 +39,7 @@
                     <td>                        
                         <button class="btn btn-danger" ng-click="del(categoria._id)">Del</button>
                         <a class="btn btn-success" href="#/categorias/{{categoria._id}}">Update</a>
+                        
                     </td>
                 </tr>
             </tbody>

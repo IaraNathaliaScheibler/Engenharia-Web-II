@@ -1,3 +1,11 @@
+<head>
+    <style>
+      body {
+            background-color: #D8BFD8;
+        } 
+    </style>
+    
+</head>
 <section class="container ">
     <meu-painel>
 
@@ -22,17 +30,18 @@
                 </div>
 
                  <div class="dropdown" >                    
-                    <select name="grupo"  ng-controller="categoriasController" ng-model="produto.categoria"
+                    <select name="grupo"  ng-controller="categoriasController" ng-model="produto.categoria" class="btn btn-warning"
                      ng-options="categoria as categoria.nomeCategoria for categoria in categorias track by categoria._id">
                         <option value="">Categorias</option>
                     </select>
                      <span class="form-control alert-danger" ng-show="formulario.grupo.$error.required && formulario.$submitted">Grupo Obrigatorio</span>
+                     <a href="#/categorias/new" class="btn btn-warning">+</a>
                 </div>
                 <br>
 
 
-                <button type="submit" class="btn btn-success" ng-disabled="formularioProduto.$invalid">Salvar</button>
-                <a href="#/produtos" class="btn btn-info">Voltar</a>
+                <button type="submit" class="btn btn-warning" ng-disabled="formularioProduto.$invalid">Salvar</button>
+                <a href="#/produtos" class="btn btn-warning">Voltar</a>
                 <hr>
             </div>
         </form>

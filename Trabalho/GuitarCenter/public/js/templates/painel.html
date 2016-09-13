@@ -1,27 +1,32 @@
+<head ng-app="produtos">
+    
+
+    </style>
+</head>
+
+<head>
+    <style>
+        .jumbotron {
+            background-color: #D8BFD8
+        }
+    </style>
+</head>
 <div class="jumbotron">
 
+    <head>
 
-
+    </head>
     <section>
 
+        <ul ng-controller="menuController" class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#/home">Home</a></li>
+            <li role="presentation" class="active"><a href="#/produtos">Produtos</a></li>
+            <li role="presentation" class="active"><a href="#/categorias">Categorias</a></li>
+            <li role="presentation" class="active"><a href="#/sobre">Sobre</a></li>
+        </ul>
 
 
-        <div ng-controller="menuController" ng-cloak>
-            <md-content class="md-padding">
-                <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-                    <md-nav-item md-nav-click="goto('page1')" name="home">Home</md-nav-item>
-                    <md-nav-item md-nav-click="goto('page2')" name="produto">Produto</md-nav-item>
-                    <md-nav-item md-nav-click="goto('page3')" name="categoria">Categoria</md-nav-item>
-                    <md-nav-item md-nav-click="goto('page3')" name="categoria">Sobre</md-nav-item>
-                    <!-- these require actual routing with ui-router or ng-route, so they won't work in the demo
-      <md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
-      <md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item>
-      -->
-                </md-nav-bar>
-                <div class="ext-content">
-                    External content for <span>{{currentNavItem}}</span>
-                </div>
-            </md-content>
+
 
     </section>
-    </div>
+</div>

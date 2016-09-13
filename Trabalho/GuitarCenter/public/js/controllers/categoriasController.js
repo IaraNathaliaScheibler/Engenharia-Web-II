@@ -4,7 +4,7 @@ angular.module('produtos')
 
             $scope.order = false;
 
-            $scope.categorias = [];
+            $scope.categorias = [ ];
 
 
             $http.get('api/categorias')

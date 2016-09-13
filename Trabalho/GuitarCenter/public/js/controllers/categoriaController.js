@@ -18,7 +18,7 @@ angular.module('produtos')
 
             $scope.submeter = submeter;
             function submeter() {
-                if ($scope.formulario.$valid) {
+                if ($scope.formularioCategoria.$valid) {
                     if ($routeParams.id) {
                         $http.put('/api/categorias/' + $scope.categoria._id, $scope.categoria)
                             .success(function () {

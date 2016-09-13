@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Click</title>
+    <meta charset="UTF-8">
+   
+    <meta name="viewport" content="width-divice-width, initial-scale=1">
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+</head>
+
+<body ng-app="teste">
+    <div class="row text-center" ng-controller="calculadoraController as c">
+
+        <form id="calc">
+            <input ng-model="c.num1" type="number" class="btn btn-warning">
+            <input ng-model="c.num2" type="number" class="btn btn-warning">
+            <p></p>
+
+        </form>
+        <div id="botoes">
+            <button type="button" class="btn btn-info" ng-click="c.soma()">+</button>
+            <button type="button" class="btn btn-info" ng-click="c.subtracao()">-</button>
+            <button type="button" class="btn btn-info" ng-click="c.divisao()">/</button>
+            <button type="button" class="btn btn-info" ng-click="c.multi()">*</button>
+            
+
+        </div>
+        <p></p>
+        {{c.resultado}}
+
+    </div>
+    <script src="vendor/angular/angular.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controller/calculadoraController.js"></script>
+</body>
+
+</html>
