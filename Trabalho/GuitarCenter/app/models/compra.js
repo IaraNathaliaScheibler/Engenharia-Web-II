@@ -2,21 +2,15 @@ var mongoose = require('mongoose');
 
 module.exports = function () {
   var schema = mongoose.Schema({
-    nome: {
-      type: String,
-      require: true
-    },
-    nomeProduto: {
-      type: String,
-      require: true
+    produto:{
+      type: Object
     },
     email: {
       type: String,
       require: true
     },
     formaPag: {
-      type: Object
-
+      type: String
     }
   });
 

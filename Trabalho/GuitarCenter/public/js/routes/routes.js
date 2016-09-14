@@ -19,12 +19,12 @@ angular.module('produtos')
 
         $routeProvider.when('/comprar/:id', {
             templateUrl: 'partials/comprar.html',
-            controller: 'produtoController'
+            controller: 'compraController'
         });
 
-        $routeProvider.when('/endereco', {
+        $routeProvider.when('/endereco:id', {
             templateUrl: 'partials/formularioEndereco.html',
-            controller: 'compraController'
+            controller: 'enderecoController'
         });
 
         $routeProvider.when('/home', {

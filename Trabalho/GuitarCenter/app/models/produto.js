@@ -1,4 +1,11 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose')
+    categoria= {
+    nomeCategoria: {
+      type: String,
+      require: true
+    },
+    
+  };
 
 module.exports = function () {
   var schema = mongoose.Schema({
@@ -11,8 +18,7 @@ module.exports = function () {
       require: true
     },
     categoria: {
-      type: Object
-
+      type: categoria
     }
   });
 

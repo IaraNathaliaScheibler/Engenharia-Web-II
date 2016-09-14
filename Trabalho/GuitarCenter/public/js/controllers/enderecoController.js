@@ -4,11 +4,12 @@ angular.module('produtos')
 
             $scope.endereco = {};
             $scope.mensagem = '';
+            produto={};
 
             if ($routeParams.id) {
-                $http.get('/api/endereco/' + $routeParams.id)
-                    .success(function (categoria) {
-                        $scope.endereco = endereco;
+                $http.get('api/produtos/' + $routeParams.id)
+                    .success(function (produto) {
+                        produto = produto;
                     })
                     .error(function (erro) {
                         console.log(erro);
@@ -20,7 +21,7 @@ angular.module('produtos')
             function submeter() {
                 if ($scope.formularioEndereco.$valid) {
                     if ($routeParams.id) {
-                    
+
                         $http.post('/api/endereco', $scope.endereco)
                             .success(function () {
                                 $scope.endereco = {};
@@ -30,8 +31,9 @@ angular.module('produtos')
                                 console.log(erro);
                                 $scope.mensagem = 'Não foi possível cadastrar o endereço!';
                             });
-                    
-                }
-            }
 
+                    }
+                }
+
+            }
         }]);
