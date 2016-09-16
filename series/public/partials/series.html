@@ -1,0 +1,53 @@
+<section class="container ">
+
+    <meu-painel titulo="Lista de Séries">
+
+    </meu-painel>
+
+
+    <div class="input-group">
+        <span class="input-group-btn">
+                    <a href="#/series/new" class="btn btn-primary" type="button">
+                        Nova série
+                    </a>
+                </span>
+        <input class="form-control" ng-model="filtro">
+    </div>
+
+
+
+    <div class="row">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>
+                        <h1 class="fa fa-user"></h1>
+                        <a ng-click="sort('nome')">Nome</a>
+                    </td>
+                    <td>
+                        <h1 class="fa fa-envelope"></h1>
+                        <a ng-click="sort('episodio')">Episódio</a></td>
+                  
+
+                        </td>
+                </tr>
+            </thead>
+
+            <tbody class="table-striped">
+                <tr ng-repeat="serie in series | 
+                     orderBy:sortValue:order
+                     | filter: filtro">
+                    <td>{{serie.nome }}</td>
+                    <td>{{serie.episodio}}</td>
+                    
+                    <td>                        
+                        <button class="btn btn-danger" ng-click="del(serie._id)">Del</button>
+                        <a class="btn btn-success" href="#/series/{{serie._id}}">Update</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>

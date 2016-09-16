@@ -26,7 +26,7 @@ angular.module('produtos')
             templateUrl: 'partials/formularioEndereco.html',
             controller: 'enderecoController'
         });
-
+          
         $routeProvider.when('/home', {
             templateUrl: 'partials/home.html'
 

@@ -1,0 +1,30 @@
+{
+  "name": "projetos",
+  "version": "1.0.0",
+  "description": "Exercício para aula de webII",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install"
+  },
+  "keywords": [
+    "node",
+    "webII",
+    "ufms"
+  ],
+  "author": "Iara Nathalia Scheibler",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "express-load": "^1.1.15",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.5.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-jshint": "^2.0.1",
+    "jshint": "^2.9.3"
+  }
+}

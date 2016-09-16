@@ -1,0 +1,38 @@
+<section class="container ">
+    <meu-painel titulo="Cadatro de Séries">
+
+    </meu-painel>
+
+    <div class="row">
+ <span class=" alert-info" 
+                    ng-show = "formulario.$submitted"
+                    
+                    > {{mensagem}} </span>
+
+
+        <form novalidate name="formulario" class="row" ng-submit="submeter()">
+            <div class="row">
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" name="nome" ng-model="serie.nome" class="form-control" required>
+                   <span class="form-control alert-danger" 
+                    ng-show = "formulario.$submitted && formulario.nome.$error.required"
+                    > Nome obrigatório </span>
+                </div>
+
+                <div class="form-group">
+                    <label>Série</label>
+                    <input type="text" name="serie" ng-model="serie.episodio" class="form-control" required>
+                    <span class="form-control alert-danger" 
+                    ng-show = "formulario.$submitted && formulario.episodio.$error.required"
+                    > Episódio obrigatório </span>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary" ng-disabled="formulario.$invalid" >Salvar</button>
+                <a href="#/series" class="btn btn-primary">Voltar</a>
+                <hr>
+            </div>
+        </form>
+    </div>
+    </section>
