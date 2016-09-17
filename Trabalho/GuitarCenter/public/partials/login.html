@@ -1,0 +1,32 @@
+ <style>
+        body {
+            background-color: #D8BFD8;
+        } 
+       
+    </style>
+ <section class="container ">
+
+
+     <form novalidate name="formularioLogin" class="row" ng-submit="submeter()">
+            <div class="row">
+                <div class="form-group">
+                    <label>Login</label>
+                    <input type="text" name="nomeUsuario" ng-model="login.usuario" class="form-control" required>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="text" name="senha" ng-model="login.senha" class="form-control" required>
+                    
+                </div>
+
+                <br>
+
+
+                <a href="#/home" class="btn btn-warning">Entrar como administrador</a><br><br>
+                <a href="#/home" class="btn btn-warning">Entrar como usuário</a>
+                <hr>
+            </div>
+        </form>
+    </section>

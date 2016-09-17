@@ -27,6 +27,11 @@ angular.module('produtos')
             controller: 'compraController'
         });
 
+         $routeProvider.when('/login', {
+            templateUrl: 'partials/login.html',
+            controller: 'loginController'
+        });
+
         $routeProvider.when('/endereco', {
             templateUrl: 'partials/formularioEndereco.html',
             controller: 'enderecoController'
@@ -52,6 +57,6 @@ angular.module('produtos')
 
         });
 
-        $routeProvider.otherwise({ redirectTo: '/produtos' });
+        $routeProvider.otherwise({ redirectTo: '/login' });
         
     }]);

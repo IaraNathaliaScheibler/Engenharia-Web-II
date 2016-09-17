@@ -34,7 +34,7 @@
                 <tr class="info" ng-repeat="categoria in categorias | 
                      orderBy:sortValue:order
                      | filter: filtro">
-                    <td>{{categoria.nomeCategoria }}</td>
+                    <td class="danger">{{categoria.nomeCategoria }}</td>
                     
                     <td>                        
                         <button class="btn btn-danger" ng-click="del(categoria._id)">Del</button>
