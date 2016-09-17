@@ -26,6 +26,13 @@
                     <span class="form-control alert-danger" ng-show="formularioCompra.$submitted && formularioCompra.preco.$error.required"> Preço obrigatório </span>
                 </div>
 
+                <div class="form-group">
+                    <label>Nome do cliente</label>
+                    <input type="text" name="nome" ng-model="compra.nome" class="form-control" required>
+                     
+                    
+                </div>
+
                 <a href="#/endereco" class="btn btn-warning">Endereço</a><br></br>
 
                 <div class="form-group">
@@ -48,6 +55,8 @@
                 <button type="submit" class="btn btn-success" ng-disabled="formularioCompra.$invalid" >Salvar</button>
                 
                 <a href="#/produtos" class="btn btn-warning">Voltar</a>
+
+                <a href="#/exibirCompra" class="btn btn-warning">Exibir</a>
                 <hr>
             </div>
         </form>

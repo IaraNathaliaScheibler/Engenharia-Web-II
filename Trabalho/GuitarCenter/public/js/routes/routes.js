@@ -22,7 +22,12 @@ angular.module('produtos')
             controller: 'compraController'
         });
 
-        $routeProvider.when('/endereco:id', {
+        $routeProvider.when('/exibir', {
+            templateUrl: 'partials/exibirCompra.html',
+            controller: 'compraController'
+        });
+
+        $routeProvider.when('/endereco', {
             templateUrl: 'partials/formularioEndereco.html',
             controller: 'enderecoController'
         });

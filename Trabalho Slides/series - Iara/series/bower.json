@@ -1,0 +1,26 @@
+{
+  "name": "series",
+  "description": "Projeto para aula de web",
+  "main": "server.js",
+  "authors": [
+    "Iara Nathalia Scheibler"
+  ],
+  "license": "Isc",
+  "keywords": [
+    "node",
+    "web",
+    "II",
+    "ufms"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.3"
+  }
+}
